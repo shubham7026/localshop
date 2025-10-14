@@ -1,0 +1,16 @@
+#I have added JPA and MySQL driver dependency and not it is failing with
+#Failed to configure a DataSource: 'url'
+
+spring:
+  sql:
+    init:
+      mode: always
+      schema-locations:
+        - classpath:schemas/user-schema.sql
+  jpa:
+    show-sql: true
+    generate-ddl: true # generates schema if true
+  datasource:
+    url: jdbc:mysql://localhost:3306/localshop
+    username: root
+    password: Banana@923083
