@@ -16,6 +16,7 @@ public class UserController {
 
     @GetMapping("/login")
     public ResponseEntity<User> login(@RequestBody User user) {
+
         userApplicationService.login(user);
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
