@@ -1,11 +1,10 @@
 package com.localshop.customer.services.implementations;
 
-import org.hibernate.annotations.Comment;
-import org.springframework.stereotype.Component;
+import jakarta.annotation.PostConstruct;
 
 import java.beans.PropertyEditorSupport;
 
-@Component
+
 public class PropertyEditor extends PropertyEditorSupport {
 
     @Override

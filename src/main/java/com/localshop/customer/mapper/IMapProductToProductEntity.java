@@ -1,6 +1,6 @@
 package com.localshop.customer.mapper;
 
-import com.localshop.customer.enttity.ProductEntity;
+import com.localshop.customer.entity.ProductEntity;
 import com.localshop.customer.model.Product;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

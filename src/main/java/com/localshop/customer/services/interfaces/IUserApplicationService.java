@@ -5,7 +5,7 @@ import com.localshop.customer.model.User;
 public interface IUserApplicationService {
     void login(User user);
 
-    void login(String mobileNo, String password);
+    void login(String email, String password);
 
     User addUser(User user);
 }

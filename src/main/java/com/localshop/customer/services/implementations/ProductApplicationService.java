@@ -1,18 +1,17 @@
 package com.localshop.customer.services.implementations;
 
-import com.localshop.customer.enttity.ProductEntity;
+import com.localshop.customer.entity.ProductEntity;
 import com.localshop.customer.mapper.IMapProductToProductEntity;
 import com.localshop.customer.model.Product;
 import com.localshop.customer.persistence.interfaces.IProductRepository;
 import com.localshop.customer.services.interfaces.IProductApplicationService;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Slf4j
-@Service
 public class ProductApplicationService implements IProductApplicationService {
 
     @Autowired

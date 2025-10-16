@@ -4,6 +4,7 @@ import com.localshop.customer.model.User;
 import com.localshop.customer.services.implementations.PropertyEditor;
 import com.localshop.customer.services.interfaces.IUserApplicationService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -32,10 +33,10 @@ public class UserController {
 //    }
 
     @GetMapping("/login")
-    public ResponseEntity<User> login(@RequestParam("mobileNo") String mobileNo,
+    public ResponseEntity<User> login(@RequestParam("email") String email,
                                       @RequestParam("password") String password) {
 
-        userApplicationService.login(mobileNo,password);
+        userApplicationService.login(email,password);
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
                 .build();

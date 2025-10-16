@@ -1,6 +1,6 @@
 package com.localshop.customer.services.implementations;
 
-import com.localshop.customer.enttity.UserEntity;
+import com.localshop.customer.entity.UserEntity;
 import com.localshop.customer.exceptions.PasswordMissMatchedException;
 import com.localshop.customer.exceptions.UserAlreadyExistException;
 import com.localshop.customer.mapper.IMapUserEntityToUser;
@@ -9,14 +9,15 @@ import com.localshop.customer.model.User;
 import com.localshop.customer.persistence.interfaces.IUserRepository;
 import com.localshop.customer.services.interfaces.INotificationService;
 import com.localshop.customer.services.interfaces.IUserApplicationService;
+import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Slf4j
-@Service
 public class UserApplicationService implements IUserApplicationService {
 
     @Autowired
@@ -32,8 +33,8 @@ public class UserApplicationService implements IUserApplicationService {
     @Qualifier("smsNotificationService")
     private INotificationService smsNotificationService;
 
-    @Autowired
     @Qualifier("emailNotificationService")
+    @Autowired
     private INotificationService emailNotificationService;
 
     @Override
@@ -63,9 +64,9 @@ public class UserApplicationService implements IUserApplicationService {
     }
 
     @Override
-    public void login(String mobileNo, String password) {
+    public void login(String email, String password) {
         User user = new User();
-        user.setMobileNo(mobileNo);
+        user.setEmail(email);
         user.setPassword(password);
         login(user);
     }

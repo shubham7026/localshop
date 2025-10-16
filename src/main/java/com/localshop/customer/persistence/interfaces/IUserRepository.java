@@ -1,6 +1,6 @@
 package com.localshop.customer.persistence.interfaces;
 
-import com.localshop.customer.enttity.UserEntity;
+import com.localshop.customer.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IUserRepository extends JpaRepository<UserEntity, Integer> {
