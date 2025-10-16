@@ -17,5 +17,5 @@ public class User {
 
     @JsonProperty("mobile_no")
     private String mobileNo;
-    //private Address address;
+    private Address address;
 }

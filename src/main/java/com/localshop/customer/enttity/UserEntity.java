@@ -28,6 +28,6 @@ public class UserEntity implements Serializable {
     @Column(name="mobile_no")
     private String mobileNo;
 
-    //@OneToOne(cascade = CascadeType.ALL)
-    //private Address address;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address address;
 }
