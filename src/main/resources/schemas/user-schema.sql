@@ -10,3 +10,13 @@ mobile_no varchar(10) default null,
 primary key (`id`)
 
 ) Engine=InnoDB Auto_increment=1 default charset=latin1 ;
+
+
+create table if not exists address (
+id int default null,
+city varchar(50) default null,
+pin_code int default null,
+state varchar(50) default null,
+primary key (`id`)
+
+) ;

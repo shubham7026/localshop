@@ -24,5 +24,10 @@ public class UserEntity implements Serializable {
 
     private String email;
     private String password;
-    private String mobile_no;
+
+    @Column(name="mobile_no")
+    private String mobileNo;
+
+    //@OneToOne(cascade = CascadeType.ALL)
+    //private Address address;
 }
